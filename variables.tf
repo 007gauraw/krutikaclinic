@@ -4,11 +4,6 @@ variable "aws_region" {
   default     = "ap-south-1"
 }
 
-variable "aws_role_arn" {
-  description = "AWS IAM role ARN for GitHub Actions OIDC authentication"
-  type        = string
-}
-
 variable "s3_bucket_name" {
   description = "S3 bucket name for hosting the static website"
   type        = string
