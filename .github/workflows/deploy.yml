@@ -7,6 +7,9 @@ on:
     paths:
       - "website/**" # Only trigger on website file changes
       - ".github/workflows/deploy.yml"
+  pull_request:
+    paths:
+      - "website/**"
 
 jobs:
   deploy:
