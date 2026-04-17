@@ -1,4 +1,161 @@
 <!doctype html>
-<html>
-  <div>work in progress</div>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Dr. Krutika's Wellness & Aesthetic Clinic in Pune. Expert care for general health, skin, and hair. Book your appointment today!"
+    />
+    <meta
+      name="keywords"
+      content="Dr. Krutika, Wellness Clinic, Aesthetic Clinic, Pune, General Physician, Skin Care, Hair Treatment, Health, Appointment"
+    />
+    <meta name="author" content="Dr. Krutika's Wellness & Aesthetic Clinic" />
+    <title>Dr. Krutika's Wellness & Aesthetic Clinic</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="header">
+      <!-- Logo placeholder -->
+      <div
+        style="
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 1.2rem;
+        "
+      >
+        <img
+          src="images/logo.jpeg"
+          alt="Clinic Logo"
+          class="logo"
+          id="logo-img"
+          style="
+            display: block;
+            margin: 0;
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(221, 157, 103, 0.1);
+          "
+        />
+        <div class="clinic-name" style="margin: 0">
+          Dr. Krutika's Wellness & Aesthetic Clinic
+        </div>
+      </div>
+      <div class="tagline">Expert Care. Healthy Life. Glowing Skin.</div>
+    </header>
+
+    <main>
+      <section class="section">
+        <div class="section-title">Services Offered</div>
+        <div class="services-flex">
+          <div class="service-block">
+            <div
+              class="section-title"
+              style="
+                font-size: 1.2rem;
+                margin-bottom: 0.7rem;
+                border: none;
+                padding-left: 0;
+              "
+            >
+              General Physician
+            </div>
+            <ul>
+              <li>Fever (Viral, Typhoid, Malaria)</li>
+              <li>Cold, Cough, Flu, Throat Infection</li>
+              <li>Diabetes, Thyroid, Cholesterol</li>
+              <li>Blood Pressure (High / Low)</li>
+              <li>Acidity, Gas, Indigestion</li>
+              <li>Diarrhea, Vomiting, Dysentery</li>
+              <li>Asthma, Bronchitis, Allergy</li>
+              <li>Urinary Tract Infections</li>
+              <li>Vitamin Deficiency, Fatigue</li>
+              <li>Body Pain, Joint Pain</li>
+              <li>Stomach Pain, Gastritis</li>
+              <li>Migraine, Dizziness</li>
+              <li>General Weakness & Health Checkups</li>
+            </ul>
+          </div>
+          <div class="service-block">
+            <div
+              class="section-title"
+              style="
+                font-size: 1.2rem;
+                margin-bottom: 0.7rem;
+                border: none;
+                padding-left: 0;
+              "
+            >
+              Skin Diseases
+            </div>
+            <ul>
+              <li>Acne, Pimples</li>
+              <li>Pigmentation, Dark Spots</li>
+              <li>Melasma, Sun Tan</li>
+              <li>Eczema, Dermatitis</li>
+              <li>Fungal Infections</li>
+              <li>Psoriasis, Lichen Planus</li>
+              <li>Allergic Rashes, Itching</li>
+              <li>Hair Fall, Dandruff</li>
+              <li>Premature Greying</li>
+              <li>Nail Problems</li>
+              <li>Skin Whitening & Rejuvenation</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-title">Contact Information</div>
+        <ul>
+          <li>
+            <strong>Address:</strong> Shop no. 1 T2 Godrej Green Vistas Society,
+            Mahalunge High street, Mahalunge, Pune
+          </li>
+          <li>
+            <strong>Clinic Timings:</strong> 11:00 AM - 3:00 PM, 5:00 PM - 9:00
+            PM
+          </li>
+          <li><strong>Appointment:</strong> DM for Appointment - 9623048598</li>
+        </ul>
+        <div style="font-weight: 600; color: #dd9d67; font-size: 1.1rem">
+          Your Health. Our Priority
+        </div>
+      </section>
+    </main>
+
+    <footer class="contact">
+      <div class="contact-title">Contact Us</div>
+      <div class="contact-info">
+        Mobile:
+        <a href="tel:7972223483" style="color: #fff; text-decoration: underline"
+          >7972223483</a
+        >
+      </div>
+      <div class="contact-info">
+        WhatsApp:
+        <a
+          href="https://wa.me/9623048598"
+          style="color: #fff; text-decoration: underline"
+          >9623048598</a
+        >
+      </div>
+      <div style="margin-top: 1rem; font-size: 0.95rem">
+        &copy; 2026 Dr. Krutika's Wellness & Aesthetic Clinic
+      </div>
+    </footer>
+
+    <script>
+      // Show logo if image is present
+      const logo = document.getElementById("logo-img");
+      fetch("logo.png", { method: "HEAD" }).then((r) => {
+        if (r.ok) logo.style.display = "inline-block";
+      });
+    </script>
+  </body>
 </html>
