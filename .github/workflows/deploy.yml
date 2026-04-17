@@ -1,0 +1,45 @@
+name: Deploy Website
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "website/**" # Only trigger on website file changes
+      - ".github/workflows/deploy.yml"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: production
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-region: ap-south-1
+          role-to-assume: ${{ vars.AWS_ROLE_ARN }}
+
+      - name: Deploy to S3
+        run: |
+          aws s3 sync ./website s3://${{ vars.S3_BUCKET_NAME }} --delete
+        env:
+          AWS_REGION: ap-south-1
+
+      - name: Invalidate CloudFront Cache
+        run: |
+          DISTRIBUTION_ID=$(aws cloudfront list-distributions \
+            --query "DistributionList.Items[?Origins.Items[0].DomainName=='${{ vars.S3_BUCKET_NAME }}.s3.amazonaws.com'].Id" \
+            --output text)
+
+          if [ -n "$DISTRIBUTION_ID" ]; then
+            aws cloudfront create-invalidation \
+              --distribution-id $DISTRIBUTION_ID \
+              --paths "/*"
+            echo "Invalidated CloudFront distribution: $DISTRIBUTION_ID"
+          else
+            echo "Warning: Could not find CloudFront distribution"
+          fi
