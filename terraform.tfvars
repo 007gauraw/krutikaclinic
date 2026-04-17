@@ -5,6 +5,7 @@ s3_bucket_name                 = "krutika-clinic-s3-bucket" # Must be globally u
 domain_name                    = "drkrutikaclinic.com"      # Your GoDaddy domain
 create_www_subdomain           = true
 cloudfront_default_root_object = "index.html"
+aws_role_arn                   = "arn:aws:iam::643955788073:role/github-actions-krutika-clinic"
 
 tags = {
   Project     = "KrutikaClinic"
