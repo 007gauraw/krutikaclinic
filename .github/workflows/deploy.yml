@@ -11,6 +11,10 @@ on:
     paths:
       - "website/**"
 
+permissions:
+  contents: read
+  id-token: write
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
