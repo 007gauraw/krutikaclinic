@@ -72,6 +72,7 @@ resource "aws_cloudfront_distribution" "website" {
 
   enabled             = true
   default_root_object = var.cloudfront_default_root_object
+  aliases             = ["drkrutikaclinic.com", "www.drkrutikaclinic.com"]
 
   default_cache_behavior {
     allowed_methods  = ["GET", "HEAD", "OPTIONS"]
@@ -98,7 +99,10 @@ resource "aws_cloudfront_distribution" "website" {
   }
 
   viewer_certificate {
-    cloudfront_default_certificate = true
+    acm_certificate_arn             = var.acm_certificate_arn
+    ssl_support_method              = "sni-only"
+    minimum_protocol_version        = "TLSv1.2_2021"
+    cloudfront_default_certificate  = false
   }
 
   tags = var.tags
