@@ -42,6 +42,11 @@ variable "cloudfront_max_ttl" {
   default     = 86400
 }
 
+variable "acm_certificate_arn" {
+  description = "ARN of the ACM SSL certificate for CloudFront"
+  type        = string
+}
+
 variable "enable_versioning" {
   description = "Enable S3 bucket versioning"
   type        = bool
